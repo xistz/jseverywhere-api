@@ -1,0 +1,20 @@
+version: '3.7'
+
+services:
+
+  # mongo:
+  #   image: mongo
+  #   restart: always
+  #   environment:
+  #     MONGO_INITDB_ROOT_USERNAME: root
+  #     MONGO_INITDB_ROOT_PASSWORD: example
+
+  api:
+    build: .
+    restart: always
+    volumes: 
+      - .:/app
+    ports:
+      - 4000:4000
+    command:
+      npm run dev
