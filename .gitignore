@@ -62,3 +62,6 @@ typings/
 
 # VSCode settings
 .vscode/
+
+/.docker/volumes/db/*
+!/.docker/volumes/db/.gitkeep

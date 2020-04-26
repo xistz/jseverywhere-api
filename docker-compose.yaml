@@ -2,12 +2,14 @@ version: '3.7'
 
 services:
 
-  # mongo:
-  #   image: mongo
-  #   restart: always
-  #   environment:
-  #     MONGO_INITDB_ROOT_USERNAME: root
-  #     MONGO_INITDB_ROOT_PASSWORD: example
+  db:
+    image: mongo
+    restart: always
+    volumes:
+      - .docker/volumes/db:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
 
   api:
     build: .
